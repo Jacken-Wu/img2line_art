@@ -1,5 +1,6 @@
 const navContainer = document.getElementById('nav-container');
 const navItems = navContainer.querySelectorAll('.nav-item');
+console.log(navItems);
 const parameterBox = document.getElementById('parameter-box');
 const imageContainer = document.getElementById('image-container');
 const imageShower = document.getElementById('image-shower');
@@ -91,7 +92,6 @@ navItems.forEach(item => {
             parameterBox.innerHTML = edgeParameter;
             imageShower.src = "./get_edge";
             imageShower.alt = "线稿";
-            console.log(parameterBox);
             const startButton = parameterBox.querySelector('#start-button');
             startButton.addEventListener('click', async () => {
                 let arg1 = parameterBox.querySelector('#arg1').value;

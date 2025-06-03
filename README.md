@@ -15,6 +15,14 @@ pip install -r requirements.txt
 
 ## 使用方法
 
+本脚本有两种运行方式：CLI命令行方式和Web界面方式。
+
+### CLI
+
 原图名字修改为input（input.jpg/jpeg/png）
 
-运行run.bat，按照提示操作
+运行run_cli.bat，按照提示操作
+
+### Web界面
+
+运行run_web.bat，按照提示操作
