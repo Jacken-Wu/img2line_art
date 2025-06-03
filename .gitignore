@@ -1,0 +1,6 @@
+*.png
+*.jpg
+*.jpeg
+.vscode
+.venv
+src/__pycache__

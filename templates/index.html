@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片转换</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div id="nav-container">
+        <nav>
+            <input type="radio" name="radio" id="origin" checked></input>
+            <label class="nav-item origin" for="origin">原图</label>
+
+            <input type="radio" name="radio" id="edge"></input>
+            <label class="nav-item edge" for="edge">线稿提取</label>
+
+            <input type="radio" name="radio" id="line"></input>
+            <label class="nav-item line" for="line">线条化</label>
+
+            <input type="radio" name="radio" id="dot"></input>
+            <label class="nav-item dot" for="dot">点化</label>
+
+            <input type="radio" name="radio" id="combine"></input>
+            <label class="nav-item combine" for="combine">合并</label>
+        </nav>
+    </div>
+    <div id="parameter-box">
+        <form id="upload-form">
+            <input type="file" id="image-input" accept=".png, .jpg, .jpeg" />
+        <button type="submit">上传</button>
+    </form>
+    </div>
+    <div id="image-container">
+        <img id="image-shower" src="./get_image" alt="原图">
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

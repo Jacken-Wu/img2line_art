@@ -1,0 +1,20 @@
+#parameter-box {
+    max-width: 100%;
+
+    ul p {
+        display: inline;
+    }
+
+    ul input {
+        display: inline;
+    }
+}
+
+#image-container {
+    position: relative;
+}
+
+#image-shower {
+    max-width: 100%;
+    max-height: 100%;
+}
