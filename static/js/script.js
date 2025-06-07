@@ -1,6 +1,5 @@
 const navContainer = document.getElementById('nav-container');
 const navItems = navContainer.querySelectorAll('.nav-item');
-console.log(navItems);
 const parameterBox = document.getElementById('parameter-box');
 const imageContainer = document.getElementById('image-container');
 const imageShower = document.getElementById('image-shower');
@@ -9,6 +8,12 @@ const imageInput = document.getElementById('image-input');
 
 imageContainer.style.width = (window.innerWidth - 20) + 'px';
 imageContainer.style.height = (window.innerHeight - 250) + 'px';
+
+function reloadPage(page) {
+    const params = new URLSearchParams(window.location.search);
+    params.set('page', page); // 添加或更新参数
+    window.location.search = params.toString(); // 重新加载页面并传递参数
+}
 
 const originParameter = `
 <form id="upload-form">
@@ -122,7 +127,7 @@ navItems.forEach(item => {
                         // 显示转换后的图片
                         imageShower.src = "./get_edge";
                         imageShower.alt = "线稿";
-                        location.reload(); // 刷新页面
+                        reloadPage(1);  // 刷新页面
                     } else {
                         console.error('转换失败:', response.statusText);
                     }
@@ -169,7 +174,7 @@ navItems.forEach(item => {
                         // 显示转换后的图片
                         imageShower.src = "./get_line";
                         imageShower.alt = "线画";
-                        location.reload(); // 刷新页面
+                        reloadPage(2);  // 刷新页面
                     } else {
                         console.error('转换失败:', response.statusText);
                     }
@@ -221,7 +226,7 @@ navItems.forEach(item => {
                         // 显示转换后的图片
                         imageShower.src = "./get_dot";
                         imageShower.alt = "点画";
-                        location.reload(); // 刷新页面
+                        reloadPage(3);  // 刷新页面
                     } else {
                         console.error('转换失败:', response.statusText);
                     }
@@ -256,7 +261,7 @@ navItems.forEach(item => {
                         // 显示转换后的图片
                         imageShower.src = "./get_combine";
                         imageShower.alt = "混合画";
-                        location.reload(); // 刷新页面
+                        reloadPage(4);  // 刷新页面
                     } else {
                         console.error('转换失败:', response.statusText);
                     }

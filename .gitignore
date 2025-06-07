@@ -4,3 +4,4 @@
 .vscode
 .venv
 src/__pycache__
+.fitten

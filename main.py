@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')  # 渲染主页
+    page = request.args.get('page', 0, type=int)
+    return render_template('index.html', page=page)  # 渲染主页
 
 
 @app.route('/get_image')
