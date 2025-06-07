@@ -5,6 +5,8 @@ const imageContainer = document.getElementById('image-container');
 const imageShower = document.getElementById('image-shower');
 const uploadForm = document.getElementById('upload-form');
 const imageInput = document.getElementById('image-input');
+const loadingContainer = document.getElementById('loading-container');
+const disableMask = document.getElementById('disable-mask');
 
 imageContainer.style.width = (window.innerWidth - 20) + 'px';
 imageContainer.style.height = (window.innerHeight - 250) + 'px';
@@ -108,6 +110,8 @@ navItems.forEach(item => {
                     arg2 = '7';
                 }
                 console.log(arg1, arg2);
+                loadingContainer.style.display = 'block';
+                disableMask.style.display = 'block';
                 // 调用 API 转换图片
                 try {
                     const response = await fetch('http://127.0.0.1:5145/run_edge', {
@@ -154,6 +158,8 @@ navItems.forEach(item => {
                     arg3 = '48';
                 }
                 console.log(arg1, arg2, arg3);
+                loadingContainer.style.display = 'block';
+                disableMask.style.display = 'block';
                 // 调用 API 转换图片
                 try {
                     const response = await fetch('http://127.0.0.1:5145/run_line', {
@@ -205,6 +211,8 @@ navItems.forEach(item => {
                     arg4 = '0.1';
                 }
                 console.log(arg1, arg2, arg3, arg4);
+                loadingContainer.style.display = 'block';
+                disableMask.style.display = 'block';
                 // 调用 API 转换图片
                 try {
                     const response = await fetch('http://127.0.0.1:5145/run_dot', {
@@ -243,6 +251,8 @@ navItems.forEach(item => {
             startButton.addEventListener('click', async () => {
                 let type = select.value;
                 console.log(type);
+                loadingContainer.style.display = 'block';
+                disableMask.style.display = 'block';
                 // 调用 API 转换图片
                 try {
                     const response = await fetch('http://127.0.0.1:5145/run_combine', {
